@@ -8,4 +8,5 @@ class Solution:
                 secondSmall = num
             else:
                 return True
+                
         return False
