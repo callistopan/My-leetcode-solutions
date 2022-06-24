@@ -5,23 +5,23 @@
 <p>&nbsp;</p>
 <p><strong>Example 1:</strong></p>
 <img alt="" src="https://assets.leetcode.com/uploads/2020/10/05/insertbst.jpg" style="width: 752px; height: 221px;">
-<pre style="position: relative;"><strong>Input:</strong> root = [4,2,7,1,3], val = 5
+<pre><strong>Input:</strong> root = [4,2,7,1,3], val = 5
 <strong>Output:</strong> [4,2,7,1,3,5]
 <strong>Explanation:</strong> Another accepted tree is:
 <img alt="" src="https://assets.leetcode.com/uploads/2020/10/05/bst.jpg" style="width: 352px; height: 301px;">
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p><strong>Example 2:</strong></p>
 
-<pre style="position: relative;"><strong>Input:</strong> root = [40,20,60,10,30,50,70], val = 25
+<pre><strong>Input:</strong> root = [40,20,60,10,30,50,70], val = 25
 <strong>Output:</strong> [40,20,60,10,30,50,70,null,null,25]
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p><strong>Example 3:</strong></p>
 
-<pre style="position: relative;"><strong>Input:</strong> root = [4,2,7,1,3,null,null,null,null,null,null], val = 5
+<pre><strong>Input:</strong> root = [4,2,7,1,3,null,null,null,null,null,null], val = 5
 <strong>Output:</strong> [4,2,7,1,3,5]
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
