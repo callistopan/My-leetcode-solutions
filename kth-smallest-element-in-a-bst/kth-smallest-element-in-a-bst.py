@@ -14,6 +14,10 @@ class Solution:
     6.if k becomes zero then we return ans
     7.else we go further to right
     8.if no right subtree we again pop from stack
+    
+    time complexity----O(H+k)
+    we go down all the way to the end of the tree (height)
+    then we need to go another k times for finding our k the smallest element
     '''
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
         stack=[]
