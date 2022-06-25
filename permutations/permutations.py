@@ -1,4 +1,5 @@
 class Solution:
+    '''Time Complexity: O(n*n!) Note that there are n! permutations and it requires O(n) time to print a permutation.'''
     def permute(self, nums: List[int]) -> List[List[int]]:
         result=[]
         self.permute_recursive(nums,0,result)
