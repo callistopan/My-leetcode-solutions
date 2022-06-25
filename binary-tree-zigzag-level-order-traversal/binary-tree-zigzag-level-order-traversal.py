@@ -21,7 +21,7 @@ class Solution:
                 if level % 2 == 0:
                     currentnode.append(node.val)
                 else:
-                    currentnode.appendleft(node.val)
+                    currentnode.appendleft(node.val)   #O(1)
                     
                 if node.left:
                     q.append(node.left)
