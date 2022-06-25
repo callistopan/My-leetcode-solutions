@@ -1,5 +1,6 @@
 class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
+        ''' space is O(L) where L is the length of the word; and time is O(M * N * 4^L) where M*N is the size of the board and we have 4^L for each cell because of the recursion. Of course this would be an upper bound.'''
         r=len(board)
         c=len(board[0])
         for i in range(r):
