@@ -1,5 +1,6 @@
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
+        ''' time complexity is O(4^n) or something (i don't know:)'''
         res=[]
         self.dfs(n,0,0,'',res)
         
