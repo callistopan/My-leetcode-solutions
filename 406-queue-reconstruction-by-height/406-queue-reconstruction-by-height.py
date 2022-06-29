@@ -21,7 +21,7 @@ class Solution:
             for i in range(len(least_front_most)):
                 if f==0 and count==k and (least_front_most[i][0],least_front_most[i][1]) not in seen:
                     least_front_most[index],least_front_most[i]=least_front_most[i],least_front_most[index]
-                    look_up[(least_front_most[i][0],least_front_most[i][1])]=i
+                   
                     look_up[(least_front_most[index][0],least_front_most[index][1])]=index
                     seen[(h,k)]=True
                     f=1
