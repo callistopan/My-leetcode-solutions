@@ -17,7 +17,9 @@ class Solution:
             while root:
                 st.append(root)
                 root = root.right
-
+        
+        '''pop from the stack and if node has any right node then push that and its left too
+           so that we get the smallest element at the top of the stack'''
         def nextLeft(st):
             node = st.pop()
             pushLeft(st, node.right)
@@ -27,11 +29,16 @@ class Solution:
             node = st.pop()
             pushRight(st, node.left)
             return node.val
-
+        
+        ''' the stLeft stack contain smaller elements at the top
+             the stRight stack contian larger elements at the top'''
         stLeft, stRight = [], []
+        ''' initially push leftmost and right most'''
         pushLeft(stLeft, root)
         pushRight(stRight, root)
-
+        
+        ''' if leftsum+rightsum less than k then we need to consider the next left
+            else we need to consider the next right'''
         left, right = nextLeft(stLeft), nextRight(stRight)
         while left < right:
             if left + right == k: return True
