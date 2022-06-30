@@ -14,14 +14,16 @@ class Solution:
                 max_=counter[c]
                 maxCount=1
         
-        partCount=max_-1
-        partLength=n-(maxCount-1)
+        partCount=max_-1  # number of parts after first arrangement
+        partLength=n-(maxCount-1)   # length of each part
         
-        emptySlots=partCount*partLength
+        emptySlots=partCount*partLength #number of empty slots
         
-        availableTasks=len(tasks)-max_ * maxCount
+        availableTasks=len(tasks)-max_ * maxCount #availble tasks
         
         idles = max ( 0, emptySlots- availableTasks)
         
         return len(tasks)+ idles
+    
+    '''you can always put more tasks in each part once you met the "minimum" requirement.'''
         
