@@ -3,7 +3,6 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        
         inversion_point= len(arr)-2
         while inversion_point>=0 and arr[inversion_point]>=arr[inversion_point+1]:
             inversion_point-=1
@@ -30,5 +29,3 @@ class Solution:
             arr[l],arr[r]=arr[r],arr[l]
             l+=1
             r-=1
-
-        
