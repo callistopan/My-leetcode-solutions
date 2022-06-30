@@ -1,5 +1,8 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
+        ''' the idea is splitting the array into to parts left and right
+            compute maximum for left and max for right in reverse order
+            and sum these two'''
         max_total_profit=0
         min_price_so_far=float("inf")
         
