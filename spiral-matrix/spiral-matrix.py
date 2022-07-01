@@ -1,12 +1,15 @@
 class Solution:
     '''time complexity=O(N*M) spacecomplexity=O(M*N)'''
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        
         n=len(matrix)
         m=len(matrix[0])
         di=[0,1,0,-1]
         dj=[1,0,-1,0]
         res=[]
         visited={}
+        ''' we can solve this problem without additional space if we are allowed to change the original matrix
+            can do this by assigning a rondom value not in the range of constraints'''
         i=0
         j=0
         d=0
