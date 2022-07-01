@@ -9,7 +9,7 @@ class Solution:
         
         for i in range(2,rowIndex+1):
             
-            for j in range(i-1,0,-1):
+            for j in range(i-1,0,-1): # not including the last index and first index
                 
                 pascal[j] += pascal[j-1]  
                 
