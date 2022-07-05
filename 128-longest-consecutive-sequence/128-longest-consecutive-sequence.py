@@ -21,21 +21,6 @@ class Solution:
         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
     def longest(self,nums):
         if not nums:
             return 0
