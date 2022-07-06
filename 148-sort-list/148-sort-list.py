@@ -5,39 +5,64 @@
 #         self.next = next
 class Solution:
     def sortList(self, head: ListNode) -> ListNode:
-        if not head or not head.next:
+        
+        '''only one node or no node'''
+        if not head or not head.next :
             return head
-        slow,fast=head,head.next
-        while fast.next and fast.next.next:
-            slow=slow.next
-            fast=fast.next.next
-        head1,head2=head,slow.next
-        slow.next=None
-        head1=self.sortList(head1)
-        head2=self.sortList(head2)
-        head=self.merge(head1,head2)
-        return head
-    def merge(self, head1, head2):
-    	if not head1:
-    		return head2
-    	if not head2:
-    		return head1
-
-    	result = ListNode(0)
-    	p = result
-
-    	while head1 and head2:
-    		if head1.val <= head2.val:
-    			p.next = ListNode(head1.val)
-    			head1 = head1.next
-    			p = p.next
-    		else:
-    			p.next = ListNode(head2.val)
-    			head2 = head2.next
-    			p = p.next
-
-    	if head1:
-    		p.next = head1
-    	if head2:
-    		p.next = head2
-    	return result.next
+        
+        ''' find the middle'''
+        mid = self.getMid(head)
+        
+        '''recurse'''
+        
+        left = self.sortList(head)
+        
+        right = self.sortList(mid)
+        
+        return self.merge(left,right)
+    
+    def merge(self,l1,l2):
+        
+        dummy= current= ListNode(-1)
+        
+        while l1 and l2 :
+            
+            if l1.val <l2.val:
+                
+                current.next= l1
+                
+                l1= l1.next
+                
+                current= current.next
+                
+            else:
+                current.next = l2
+                
+                l2 = l2.next
+                
+                current= current.next
+                
+                
+        current.next = l1 if l1 else l2
+        
+        return dummy.next
+    
+    
+    def getMid(self,head):
+        
+        prev=None
+        
+        while head and head.next:
+            
+            prev = head if not prev else prev.next
+            
+            head = head.next.next
+            
+        mid = prev.next
+        prev.next =None   # seperate
+        
+        return mid
+            
+            
+        
+                
