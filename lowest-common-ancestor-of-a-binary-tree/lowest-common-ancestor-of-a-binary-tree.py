@@ -11,21 +11,68 @@ class Solution:
         
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         
-        def recurse_tree(node):
-            if not node:#reached leaf node
-                return False
-            left=recurse_tree(node.left)
-            right=recurse_tree(node.right)
+        if not root:
+            return None
+        
+        if root==p or root== q :
+            return root
+        
+        left = self.lowestCommonAncestor(root.left,p,q)
+        right = self.lowestCommonAncestor(root.right,p,q)
+        
+        
+        if left and right :
             
-            found_one=node==p or node==q
+            return root
+        
+        if not left and not right:
+            return None
+        
+        return left if left else right
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+#         def recurse_tree(node):
+#             if not node:#reached leaf node
+#                 return False
+#             left=recurse_tree(node.left)
+#             right=recurse_tree(node.right)
             
-            if found_one+left+right>=2:
-                self.ans=node
-                return True
-            return found_one or left or right
+#             found_one=node==p or node==q
+            
+#             if found_one+left+right>=2:
+#                 self.ans=node
+#                 return True
+#             return found_one or left or right
         
         
         
-        recurse_tree(root)
-        return self.ans
+#         recurse_tree(root)
+#         return self.ans
         
