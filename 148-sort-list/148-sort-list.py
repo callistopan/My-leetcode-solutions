@@ -5,6 +5,8 @@
 #         self.next = next
 class Solution:
     def sortList(self, head: ListNode) -> ListNode:
+        ''' O(nlogn) there are logn levels and  at each level 
+            we need to merge  n  nodes so O( n log n)'''
         
         '''only one node or no node'''
         if not head or not head.next :
