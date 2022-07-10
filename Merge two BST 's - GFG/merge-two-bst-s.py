@@ -104,30 +104,19 @@ class Solution:
                 
                 root2 = root2.left if root2 else None
                 
-            if s1 and s2 and s1[-1].data < s2[-1].data :
+            if (s1 and s2 and s1[-1].data < s2[-1].data) or (s1 and not s2) :
                 
                 res.append(s1[-1].data)
                 
                 root1=s1.pop().right
                 
-            elif s1 and s2 and s1[-1].data >= s2[-1].data:
+            elif (s1 and s2 and s1[-1].data >= s2[-1].data) or (s2 and not s1):
                 
                 res.append(s2[-1].data)
                 
                 root2=s2.pop().right
                 
-            elif s1 and not s2:
-                
-                res.append(s1[-1].data)
-                
-                root1=s1.pop().right
-                
-            elif s2 and not s1:
-                
-                res.append(s2[-1].data)
-                
-                root2=s2.pop().right
-                
+           
         return res
                 
                 
