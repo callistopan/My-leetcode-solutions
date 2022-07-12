@@ -2,7 +2,9 @@ class Solution:
     def combinationSum3(self, k: int, n: int) -> List[List[int]]:
         ''' time complexity is O(2^n) where n=len(combinations)
         
-            can be proved using recursion tree'''
+            can be proved using recursion tree
+            
+            space complexity is  O  (n)'''
         comb = []
         
         target=n
