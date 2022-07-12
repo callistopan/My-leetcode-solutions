@@ -1,19 +1,50 @@
 class Solution:
     def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
-        res=[]
+        
+        comb = []
+        
+        results =[]
         candidates.sort()
-        self.dfs(candidates,target,[],res)
-        return res
+        
+        self.backtrack(candidates,comb,target,0,results)
+        
+        return results
     
-    def dfs(self,candidates,target,path,res):
+    
+    def backtrack(self,candidates,comb,target,curr,results):
+        
         if target<0:
             return
         if target==0:
-            res.append(path)
-            return
-        
-        for i in range(len(candidates)):
             
-            if i>0 and candidates[i]== candidates[i-1]:
-                continue
-            self.dfs(candidates[i+1:],target-candidates[i],path+[candidates[i]],res)
+            results.append(list(comb))
+            return 
+            
+        for next_curr in range(curr,len(candidates)):
+            
+            if next_curr > curr and candidates[next_curr]== candidates[next_curr-1]:
+                
+                continue  # avoid duplicates
+                
+            pick = candidates[next_curr]
+            
+            comb.append(pick)
+            
+            self.backtrack(candidates,comb,target-pick,next_curr+1,results)
+            
+            comb.pop()  # back tracking
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+            
