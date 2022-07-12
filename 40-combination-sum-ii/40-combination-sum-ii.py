@@ -1,6 +1,8 @@
 class Solution:
     def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
+        ''' time complexity is O(2^n) where n=len(combinations)
         
+            can be proved using recursion tree'''
         comb = []
         
         results =[]
