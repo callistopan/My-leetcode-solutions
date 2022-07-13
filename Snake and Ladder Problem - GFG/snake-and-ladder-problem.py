@@ -9,7 +9,7 @@ class Solution:
         
         d={}
         
-        for i in range (0,2*N,2):
+        for i in range (0,2*N,2):  # O(2N) time
             
             d[arr[i]]= arr[i+1]
             
@@ -19,11 +19,11 @@ class Solution:
         
         # there are 30 cells
         
-        for cell in range(1,30):
+        for cell in range(1,30):  #O(30)
             
             next_cell =cell+1
             
-            while next_cell-cell <= 6 and next_cell <=30:
+            while next_cell-cell <= 6 and next_cell <=30:  #O(6)
                 
                 # if this is a special cell
                 
@@ -41,6 +41,9 @@ class Solution:
         # we taraverse the graph using bfs so that we can find the shortest distance
         
         # here the graph is not weighted so we can use BFS
+        
+        ''' time complexity of BFS is (V+E)  here V is 30 and E =6*30 (since each cell has 6 edges to other cell
+            '''
         
         q= deque()
         
