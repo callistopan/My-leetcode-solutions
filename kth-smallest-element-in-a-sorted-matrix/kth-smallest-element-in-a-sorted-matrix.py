@@ -7,6 +7,8 @@ class Solution:
         for col in range(len(matrix[0])):
             heapq.heappush(heap,(matrix[0][col],0,col))
         val=0
+        
+        # O(klogk)
         for i in range(k):
             val,row,col=heapq.heappop(heap)
             new_val=float('inf')
