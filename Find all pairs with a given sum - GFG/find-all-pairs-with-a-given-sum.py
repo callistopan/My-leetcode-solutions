@@ -5,13 +5,13 @@ class Solution:
         
         # store all elements of B in hashtable
         
-        d =Counter(B)
+        d =Counter(B)  #O(m) space 
         
         res=[]
         
-        A.sort()
+        A.sort()   # O(nlogn)
         
-        for i in range(N):
+        for i in range(N):  
             
             if X - A[i] in d:
                 
