@@ -13,6 +13,11 @@ class Solution:
         2a - 2b  = sumA - sumB
         a - b  = (sumA - sumB) / 2
         
+        
+        determinig in which direction we move is little bit tricky ,but solvable
+        
+        O(nlogn)+ O(mlogm)
+        
         '''
         
         a.sort()
