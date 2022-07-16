@@ -1,4 +1,6 @@
 class Solution:
+    ''' time = O(row*col)
+        space = O(col)'''
     def maximalRectangle(self, matrix: List[List[str]]) -> int:
         ''' for each row find the maximum area rectangle possible'''
         row=len(matrix)
