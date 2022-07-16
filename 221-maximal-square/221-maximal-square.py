@@ -1,4 +1,5 @@
 class Solution:
+    '''time and space is O(m*n)'''
     def maximalSquare(self, matrix: List[List[str]]) -> int:
         
         # first row containing all the squares of area 1 similiarly first column
