@@ -1,4 +1,5 @@
 class Solution:
+    ''' O(n*2^n)'''
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
         res =[]
         nums.sort()
