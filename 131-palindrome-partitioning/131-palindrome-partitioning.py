@@ -2,6 +2,7 @@ class Solution:
     def partition(self, s: str) -> List[List[str]]:
         
         ''' ababaabbacd'''
+        ''' O(N.2**N)'''
         res=[]
         
         self.dfs(s,[],res)
