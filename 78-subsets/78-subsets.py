@@ -1,5 +1,10 @@
 class Solution:
+    '''O(n*2^n)
+       There is 2^n subsets  and we are copying them to output list
+    
+    '''
     def subsets(self, nums: List[int]) -> List[List[int]]:
+        
     
         res =[]
         
