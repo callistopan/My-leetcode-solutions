@@ -1,40 +1,27 @@
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
-        def backtrack(start, end, tmp):
-            ans.append(tmp[:])
-            for i in range(start, end):
-                tmp.append(nums[i])
-                backtrack(i+1, end, tmp)
-                tmp.pop()
-        ans = []
-        backtrack(0, len(nums), [])
-        return ans
+    
+        res =[]
         
-#         res =[]
+        self.backtrack(nums,0,[],res)
         
-#         self.backtrack(nums,0,[],res)
-        
-#         return res
+        return res
     
     
-#     def backtrack(self,nums,index,current,res):
+    def backtrack(self,nums,start,subset,res): 
+        
+        res.append(list(subset))
         
         
-#         if index>=len(nums):
-#             return
-#         res.append(current[:])
-        
-        
-#         for i in range(index,len(nums)):
-#             print(nums[i])
-            
-#             current.append(nums[i])
-            
-#             self.backtrack(nums,index+1,current,res)
-            
-#             current.pop()
+        for i in range(start,len(nums)):
             
             
+            subset.append(nums[i])
             
+            self.backtrack(nums,i+1,subset,res)
+            
+            subset.pop()
+            
+     
             
                 
