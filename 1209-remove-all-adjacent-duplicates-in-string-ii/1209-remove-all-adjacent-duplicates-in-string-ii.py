@@ -16,4 +16,4 @@ class Solution:
                     stack.pop()
                     
             
-        return ''.join([i[0]*i[1] for i in stack])
+        return ''.join([char*count for char,count in stack])
