@@ -5,6 +5,7 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+    @lru_cache(None)
     def isEvenOddTree(self, root: Optional[TreeNode]) -> bool:
         q = deque()
         q.append(root)
