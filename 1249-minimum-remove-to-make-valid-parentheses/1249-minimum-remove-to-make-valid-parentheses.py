@@ -9,8 +9,8 @@ class Solution:
                 if stack:
                     stack.pop()
                 else:
-                    s[i] = ''
-        while stack:
+                    s[i] = ''   # remove this ')'
+        while stack: # remove extra '('s
             s[stack.pop()] = ''
-        return ''.join(s)
+        return ''.join(s)  # join final string
             
