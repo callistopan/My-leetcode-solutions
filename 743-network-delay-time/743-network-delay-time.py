@@ -1,7 +1,7 @@
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
         
-        q, t, adj = [(0, k)], {}, collections.defaultdict(list)
+        q, t, adj = [(0, k)], {}, defaultdict(list)
         for u, v, w in times:
             adj[u].append((v, w))
         while q:
