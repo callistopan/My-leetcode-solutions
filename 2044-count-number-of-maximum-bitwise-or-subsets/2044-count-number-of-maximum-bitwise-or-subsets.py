@@ -5,7 +5,7 @@ class Solution:
         
         for i in nums:
             max_possible_or|=i
-        print(max_possible_or)
+
         count=0
         for sub in s:
             
