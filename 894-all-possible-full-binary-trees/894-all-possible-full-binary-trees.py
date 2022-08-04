@@ -5,7 +5,7 @@
 #         self.left = left
 #         self.right = right
 
-
+# C(n)= C(n-i)*C(i-1) which satisfies catalan number
 class Solution:
     def allPossibleFBT(self, n: int) -> List[Optional[TreeNode]]:
         
