@@ -1,6 +1,11 @@
 class Solution:
     def maxProduct(self, words: List[str]) -> int:
+        '''
         
+         make bit mask for each of the words and and them to check if they contain any duplicate elements
+         
+        
+        '''
         n= len(words)
         
         bit_mask =[0]*n
