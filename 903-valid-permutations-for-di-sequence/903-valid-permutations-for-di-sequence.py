@@ -1,6 +1,9 @@
 class Solution:
     def numPermsDISequence(self, s: str) -> int:
         
+        
+        # make the transition diagram 
+        # read lee's solution
         n= len(s)
         
         mod= 10**9+7
