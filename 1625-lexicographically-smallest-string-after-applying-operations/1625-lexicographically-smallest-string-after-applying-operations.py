@@ -1,6 +1,12 @@
 class Solution:
     def findLexSmallestString(self, s: str, a: int, b: int) -> str:
         
+        '''
+         generate all possible stirings and add to the queue if not seen 
+         
+         also note the smallest in each iteration
+         
+        '''
         q = deque()
         
         seen = {s}
