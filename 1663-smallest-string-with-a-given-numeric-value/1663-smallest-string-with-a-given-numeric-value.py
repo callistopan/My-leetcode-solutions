@@ -1,4 +1,5 @@
 class Solution:
+   
     def getSmallestString(self, n: int, k: int) -> str:
         
         # put highest possible character at the end
