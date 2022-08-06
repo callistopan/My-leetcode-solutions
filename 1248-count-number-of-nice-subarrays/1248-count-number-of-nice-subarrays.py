@@ -8,6 +8,8 @@ class Solution:
                 k-=1
                 count=0
                 
+            
+            # we have required k odd numbers so we try to reduce the window    
             while k==0:
                 
                 k+=nums[i]&1
