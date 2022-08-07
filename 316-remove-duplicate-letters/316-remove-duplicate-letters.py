@@ -1,4 +1,7 @@
 class Solution:
+    '''
+    O(26*len(s))
+    '''
     def removeDuplicateLetters(self, s: str) -> str:
         
         rindex = {c: i for i, c in enumerate(s)}
