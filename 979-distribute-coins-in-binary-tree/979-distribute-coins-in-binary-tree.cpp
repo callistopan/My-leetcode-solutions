@@ -11,6 +11,8 @@
  */
 class Solution {
 public:
+    //  we should push coins from parents to it's child so we just return the number of coins needs
+    // to be pushed from parent to child
     int ans =0;
     
     int dfs(TreeNode* root){
