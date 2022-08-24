@@ -1,5 +1,8 @@
 class Solution:
     def swimInWater(self, grid: List[List[int]]) -> int:
+        '''pop the smallest grid each time and update the time 
+           that is the maximum of least nodes we are considering
+           each time '''
         N=len(grid)
         pq=[(grid[0][0],0,0)]
         seen=set([0,0])
