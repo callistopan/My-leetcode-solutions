@@ -5,15 +5,15 @@
 <p>&nbsp;</p>
 <p><strong>Example 1:</strong></p>
 
-<pre><strong>Input:</strong> n = 1
+<pre style="position: relative;"><strong>Input:</strong> n = 1
 <strong>Output:</strong> true
-</pre>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 
 <p><strong>Example 2:</strong></p>
 
-<pre><strong>Input:</strong> n = 10
+<pre style="position: relative;"><strong>Input:</strong> n = 10
 <strong>Output:</strong> false
-</pre>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
