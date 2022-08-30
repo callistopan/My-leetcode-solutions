@@ -7,7 +7,7 @@ public:
         for (int i=0;i<d.size();i++){
             int si=0,di=0;
             for(;si<s.size() && di<d[i].size();si++){
-                di+=(s[si]==d[i][di]);
+                di+=(s[si]==d[i][di]);  // there is a match of characters 
             }
             
             if (di==d[i].size() and (ans.size() <d[i].size() or (ans.size()==d[i].size() and ans>d[i])))
