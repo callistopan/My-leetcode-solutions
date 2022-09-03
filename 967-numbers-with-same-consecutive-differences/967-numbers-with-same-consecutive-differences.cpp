@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // O(n*2^n)
     vector<int> numsSameConsecDiff(int n, int k) {
         vector<int> res;
         for (auto num=1;num<=9;num++){
