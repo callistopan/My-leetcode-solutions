@@ -5,7 +5,7 @@ public:
         int n=nums1.size();
         int m=nums2.size();
         
-        if (n%2==0 and m%2==0) return 0;
+      
         
         if (n%2==1){
             for (auto i:nums2) ans^=i;
