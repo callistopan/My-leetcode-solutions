@@ -22,7 +22,7 @@ class TimeMap(object):
                 
                 right = mid
         
-        return "" if right == 0 else arr[right - 1][1]
+        return "" if right == 0 else arr[left - 1][1]
 
 # Your TimeMap object will be instantiated and called as such:
 # obj = TimeMap()
