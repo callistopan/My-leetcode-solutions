@@ -18,7 +18,8 @@ class TimeMap(object):
             mid = (left + right) // 2
             if arr[mid][0] <= timestamp:
                 left = mid + 1
-            elif arr[mid][0] > timestamp:
+            else:
+                
                 right = mid
         
         return "" if right == 0 else arr[right - 1][1]
