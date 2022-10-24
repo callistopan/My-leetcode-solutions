@@ -8,7 +8,8 @@ public:
             for (char c : s)
                 a.set(c - 'a');
             int n = a.count();
-            if (n < s.size()) continue;
+            if (n < s.size()) continue; // have duplicate characters
+            cout<< a << endl;
 
             for (int i = dp.size() - 1; i >= 0; --i) {
                 bitset c = dp[i];
