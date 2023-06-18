@@ -17,7 +17,7 @@ public:
         find(root, destValue, d_p);
 
         while (!s_p.empty()  && !d_p.empty() && s_p.back() == d_p.back()){
-            // remove suffixes
+            // remove prefixes
             s_p.pop_back();
             d_p.pop_back();
         }
