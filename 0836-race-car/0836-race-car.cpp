@@ -1,4 +1,5 @@
 class Solution {
+    // time complexity= Total distinct positions(=target) * total distinct speeds (=log(target)) = O(targetlog(target)).
 public:
     int racecar(int target) {
         vector<int> dp(target+1,-1);
