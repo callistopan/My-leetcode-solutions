@@ -16,7 +16,7 @@ public:
 
         int m =1 , j = 1;
 
-        for (; j < i; j = (1 << ++m)-1){
+        for (; j < i; j = (1 << ++m)-1){ // for all break points
             for (int q = 0 , p = 0 ; p < j; p = (1<< ++q)-1){
                 dp[i] = min(dp[i], m+1+q+1+race_car_help(i-(j-p),dp));
             }
