@@ -24,6 +24,7 @@ public:
         return string(s_p.size(),'U') + string(rbegin(d_p),rend(d_p)); 
     }
 
+    // find the shortest path string to val in the binary tree
     bool find(TreeNode* n, int val, string& path ){
         if (n->val == val){
             return true;
