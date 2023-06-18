@@ -19,7 +19,7 @@ class Solution:
                     
                     if 0<=r2<m and 0<=c2<n:
                         next_obs=obs+1 if grid[r2][c2]==1 else obs
-                        if next_obs <visited.get((r2,c2),float("inf")):
+                        if next_obs <visited.get((r2,c2),float("inf")): # remaining obstacles to remove is greater, for optimal removal
                             visited[(r2,c2)]=next_obs
                             q.append([r2,c2,next_obs])
             steps+=1
