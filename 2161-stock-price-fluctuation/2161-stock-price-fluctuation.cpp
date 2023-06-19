@@ -8,7 +8,7 @@ public:
     
     void update(int timestamp, int price) {
         if (rec.find(timestamp) != rec.end()){
-            count.erase(count.find(rec[timestamp]));  // remove all prices from multiset
+            count.erase(count.find(rec[timestamp]));  // remove the price at the iterator
         }
         rec[timestamp] =price; // set new price
         count.insert(price); // insert price to multiset
