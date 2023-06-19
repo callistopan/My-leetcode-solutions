@@ -1,4 +1,6 @@
 class Solution:
+    # time complexity O(a+b+c) 
+    # space O(1)
     def longestDiverseString(self,a: int, b: int, c: int) -> str:
         result = []
         counts = [(a, 'a'), (b, 'b'), (c, 'c')]
