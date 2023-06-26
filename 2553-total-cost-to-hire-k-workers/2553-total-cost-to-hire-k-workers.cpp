@@ -1,5 +1,7 @@
 class Solution {
 public:
+    // time complexity O((k+candidates) log(candidates))
+    // space O(candidates)  for storing in priority queues
     long long totalCost(vector<int>& costs, int k, int candidates) {
         int n  = costs.size();
         priority_queue<int, vector<int>, greater<int>> LeftHeap;
