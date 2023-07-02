@@ -14,6 +14,8 @@ public:
             answer = max(answer, count);
             return;
         }
+          // Ignore this request and move on to the next request without incrementing the count.
+        maxRequest(requests, indegree, n, index + 1, count);
         
         // Consider this request, increment and decrement for the buildings involved.
         indegree[requests[index][0]]--;
@@ -24,8 +26,7 @@ public:
         indegree[requests[index][0]]++;
         indegree[requests[index][1]]--;
         
-        // Ignore this request and move on to the next request without incrementing the count.
-        maxRequest(requests, indegree, n, index + 1, count);
+      
     }
     
     int maximumRequests(int n, vector<vector<int>>& requests) {
