@@ -3,7 +3,7 @@ public:
     int maxConsecutiveAnswers(string answerKey, int k) {
         int res = 0;
         int n = answerKey.size();
-        int l = 0 , r = 0 , t = 0 , f = 0;
+        int l = 0 , r = 0 , t = 0 , f = 0; // true and false
 
         while (r < n ){
             if (answerKey[r]=='T'){
@@ -12,15 +12,14 @@ public:
             else{
                 f++;
             }
-            while ( min(t,f) > k){
+            while ( min(t,f) > k){ // cant change one of the character to other
                 if(answerKey[l]=='T'){
-                    t--;
-                    l++;
+                    t--;      
                 }
                 else{
                     f--;
-                    l++;
                 }
+                l++;
             }
 
             res = max(res, r-l+1);
