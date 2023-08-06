@@ -7,11 +7,6 @@ public class Solution {
 
         long[,] dp= new long[goal+1,n+1];
 
-        for (int i = 0 ; i <= goal;i++){
-            for (int j = 0 ; j<=n;j++){
-                dp[i,j]=0;
-            }
-        }
 
         dp[0,0] = 1;
 
