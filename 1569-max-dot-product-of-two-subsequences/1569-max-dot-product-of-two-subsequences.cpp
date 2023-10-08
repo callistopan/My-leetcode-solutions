@@ -11,8 +11,8 @@ public:
             return memo[i][j];
         }
         
-        int use = nums1[i] * nums2[j] + dp(i + 1, j + 1, nums1, nums2);
-        memo[i][j] = max(use, max(dp(i + 1, j, nums1, nums2), dp(i, j + 1, nums1, nums2)));
+        int use = nums1[i] * nums2[j] + dp(i + 1, j + 1, nums1, nums2);  // pick 2 indices and move on
+        memo[i][j] = max(use, max(dp(i + 1, j, nums1, nums2), dp(i, j + 1, nums1, nums2))); // or dont pick the any pair go on
         return memo[i][j];
     }
     
@@ -32,11 +32,11 @@ public:
             secondMin = min(secondMin, num);
         }
         
-        if (firstMax < 0 && secondMin > 0) {
+        if (firstMax < 0 && secondMin > 0) { // minimise damage
             return firstMax * secondMin;
         }
         
-        if (firstMin > 0 && secondMax < 0) {
+        if (firstMin > 0 && secondMax < 0) { // minimise damage
             return firstMin * secondMax;
         } 
 
