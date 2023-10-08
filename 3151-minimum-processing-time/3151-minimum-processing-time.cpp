@@ -10,10 +10,8 @@ public:
         int maxTime = INT_MIN;
 
 
-        for ( int i = 0 ; i < 4*n ;i+=4){
-            for(int  t = 0 ; t <4 ;t++){
-                maxTime = max(maxTime , processorTime[i/4]+ tasks[i+t]);
-            }
+        for ( int i = 0 ; i < 4*n ;i+=4){ 
+                maxTime = max(maxTime , processorTime[i/4]+ tasks[i]);
         }
         return maxTime ;
 
