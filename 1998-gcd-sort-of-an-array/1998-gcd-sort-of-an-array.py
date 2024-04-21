@@ -35,7 +35,7 @@ class Solution:
             for f in getPrimeFactors(x, spf):
                 uf.union(x, f)
 
-        for x, y in zip(nums, sorted(nums)): #we are checking to the sorted,because the array already be sorted
+        for x, y in zip(nums, sorted(nums)): #we are checking to the sorted,because the array can be already sorted
             if uf.find(x) != uf.find(y):
                 return False
 
