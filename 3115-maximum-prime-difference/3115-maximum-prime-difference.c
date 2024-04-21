@@ -30,6 +30,7 @@ int maximumPrimeDifference(int* nums, int numsSize) {
         }
         j++;
     }
+    free(primes);
     return ans;
 }
 
