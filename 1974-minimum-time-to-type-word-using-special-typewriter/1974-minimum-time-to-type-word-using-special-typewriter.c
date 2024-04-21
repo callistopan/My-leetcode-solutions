@@ -1,4 +1,3 @@
-#include <math.h>
 int minTimeToType(char* word) {
     int n = strlen(word);
     int res = n;
