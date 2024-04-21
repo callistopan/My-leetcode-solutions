@@ -1,20 +1,6 @@
 int **count;
 int **dp;
 
-int dfs(int i, int p, int m, int n){
-    if (i == n){
-        return 0;
-    }
-    if (dp[i][p] == 0){
-        for (int v = 0; v < 10 ; ++v){
-            if (i == 0 || v != p){
-                dp[i][p] = fmax(dp[i][p], count[i][v] + dfs(i+1, v, m, n));
-            }
-        }
-    }
-    return dp[i][p];
-}
-
 int minimumOperations(int** grid, int gridSize, int* gridColSize) {
     int m = gridSize;
     int n = *gridColSize;
@@ -42,4 +28,18 @@ int minimumOperations(int** grid, int gridSize, int* gridColSize) {
     free(dp);
 
     return result;
+}
+
+int dfs(int i, int p, int m, int n){
+    if (i == n){
+        return 0;
+    }
+    if (dp[i][p] == 0){
+        for (int v = 0; v < 10 ; ++v){
+            if (i == 0 || v != p){
+                dp[i][p] = fmax(dp[i][p], count[i][v] + dfs(i+1, v, m, n));
+            }
+        }
+    }
+    return dp[i][p];
 }
