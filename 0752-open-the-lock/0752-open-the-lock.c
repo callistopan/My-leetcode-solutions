@@ -1,43 +1,54 @@
-#define MAX_QUEUE_SIZE 10000
+typedef struct Node {
+    char *data;
+    struct Node *prev;
+    struct Node *next;
+} Node;
+
 typedef struct {
-    char *data[MAX_QUEUE_SIZE];
-    int front, rear;
+    Node *front;
+    Node *rear;
 } Queue;
 
 Queue *createQueue() {
     Queue *q = (Queue *)malloc(sizeof(Queue));
-    q->front = -1;
-    q->rear = -1;
+    q->front = NULL;
+    q->rear = NULL;
     return q;
 }
 
 void enqueue(Queue *q, char *s) {
-    if ((q->rear + 1) % MAX_QUEUE_SIZE == q->front) {
-        return; // Queue is full
+    Node *newNode = (Node *)malloc(sizeof(Node));
+    newNode->data = strdup(s);
+    newNode->next = NULL;
+    if (q->rear == NULL) {
+        q->front = newNode;
+        q->rear = newNode;
+    } else {
+        q->rear->next = newNode;
+        newNode->prev = q->rear;
+        q->rear = newNode;
     }
-    if (q->front == -1) {
-        q->front = 0;
-    }
-    q->rear = (q->rear + 1) % MAX_QUEUE_SIZE;
-    q->data[q->rear] = strdup(s);
 }
 
 char *dequeue(Queue *q) {
-    if (q->front == -1) {
+    if (q->front == NULL) {
         return NULL; // Queue is empty
     }
-    char *result = q->data[q->front];
+    Node *temp = q->front;
+    char *result = temp->data;
     if (q->front == q->rear) {
-        q->front = -1;
-        q->rear = -1;
+        q->front = NULL;
+        q->rear = NULL;
     } else {
-        q->front = (q->front + 1) % MAX_QUEUE_SIZE;
+        q->front = q->front->next;
+        q->front->prev = NULL;
     }
+    free(temp);
     return result;
 }
 
 int isEmpty(Queue *q) {
-    return q->front == -1;
+    return q->front == NULL;
 }
 
 int openLock(char **deadends, int deadendsSize, char *target) {
@@ -56,17 +67,23 @@ int openLock(char **deadends, int deadendsSize, char *target) {
     }
     if (visited[atoi(start)] == 1){
         return -1;
-    }
+    } 
     Queue *queue = createQueue();
     enqueue(queue, start);
     visited[atoi(start)] = 1;
 
     int level = 0;
     while (!isEmpty(queue)) {
-        int size = (queue->rear - queue->front + MAX_QUEUE_SIZE + 1) % MAX_QUEUE_SIZE;
+        int size = 0;
+        for (Node *temp = queue->front; temp != NULL; temp = temp->next) {
+            size++;
+        }
         for (int i = 0; i < size; i++) {
             char *current = dequeue(queue);
             if (strcmp(current, target) == 0) {
+                while (!isEmpty(queue)) {
+                    dequeue(queue); // Clear the remaining queue
+                }
                 free(queue);
                 free(visited);
                 return level;
