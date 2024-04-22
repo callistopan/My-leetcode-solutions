@@ -1,3 +1,4 @@
+// Using doubly linked list
 typedef struct Node {
     char *data;
     struct Node *prev;
@@ -20,10 +21,10 @@ void enqueue(Queue *q, char *s) {
     Node *newNode = (Node *)malloc(sizeof(Node));
     newNode->data = strdup(s);
     newNode->next = NULL;
-    if (q->rear == NULL) {
+    if (q->rear == NULL) { // no items in the queue
         q->front = newNode;
         q->rear = newNode;
-    } else {
+    } else {              // add to the rear end
         q->rear->next = newNode;
         newNode->prev = q->rear;
         q->rear = newNode;
@@ -36,10 +37,10 @@ char *dequeue(Queue *q) {
     }
     Node *temp = q->front;
     char *result = temp->data;
-    if (q->front == q->rear) {
+    if (q->front == q->rear) { //only one item in the queu, that is being removed
         q->front = NULL;
         q->rear = NULL;
-    } else {
+    } else {                  // more than one item in the queue , advance the front
         q->front = q->front->next;
         q->front->prev = NULL;
     }
