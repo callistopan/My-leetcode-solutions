@@ -10,7 +10,12 @@ int findRotateSteps(char* ring, char* key) {
             bestSteps[i][j] = -1;
         }
     }
-    return try_lock(0,0,ring,key,bestSteps);
+    int ans = try_lock(0,0,ring,key,bestSteps);
+    for(int i = 0; i < 100;i++){
+        free(bestSteps[i]);
+    }
+    free(bestSteps);
+    return ans;
 }
 
 int try_lock(int ring_index,int key_index,char* ring,char* key, int** bestSteps){
