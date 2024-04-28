@@ -3,15 +3,16 @@ public:
     int vis[100005];
     int medianOfUniquenessArray(vector<int>& nums) {
         long long tot=nums.size();
-        tot=(tot+1)*tot/2;
+        tot=(tot+1)*tot/2; // total sub arrays
         long long need=(tot-1)/2;
       printf("%lld\n",need);
         int Max=nums.size()+1,Min=0;
         for(auto it:nums)vis[it]=0;
+        //  ATMOST MID UNIQUE ELEMENTS
         while(Max>Min+1){
             int mid=(Max+Min)/2;
             int l=0,cnt=0;
-            long long sum=0;
+            long long sum=0; // SUM OF DISTINCT NUMBER OF SUB ARRAYS
             for(int i = 0;i<nums.size();i++){
                 if(!vis[nums[i]])cnt++;
                 vis[nums[i]]++;
