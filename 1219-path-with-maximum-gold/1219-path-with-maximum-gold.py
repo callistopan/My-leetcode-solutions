@@ -1,4 +1,9 @@
 class Solution:
+    '''
+     Time complexity : O(m.n.4^g) g = number of gold cells
+     Space complexity : O(g) recursive stack could grow up to g = number of gold cells
+    
+    '''
     def getMaximumGold(self, grid: List[List[int]]) -> int:
         m, n = len(grid), len(grid[0])
         DIR = [0, 1, 0, -1, 0]
