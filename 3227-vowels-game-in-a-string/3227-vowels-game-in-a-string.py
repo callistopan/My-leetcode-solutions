@@ -3,7 +3,6 @@ class Solution:
         # poor bob
         t = "aeiou"
         for c in s:
-            for v in t:
-                if c == v:
-                    return True
+            if c in t:
+                return True
         return False
