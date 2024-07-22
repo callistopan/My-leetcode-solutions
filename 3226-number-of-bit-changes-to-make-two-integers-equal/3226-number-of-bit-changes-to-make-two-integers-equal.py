@@ -3,6 +3,7 @@ class Solution:
         if k > n :
             return -1
         res = 0
+        # 2^20 ~= 10^6
         
         for i in range(20):
             if (n >> i & 1) != (k >> i & 1): # If bits are different , 10 or 01
