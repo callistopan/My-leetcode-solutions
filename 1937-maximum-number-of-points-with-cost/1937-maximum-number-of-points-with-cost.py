@@ -1,28 +1,29 @@
 class Solution:
-    def maxPoints(self,P: List[List[int]]) -> int:
-        m, n = len(P), len(P[0])
-        if m == 1: return max(P[0])
-        if n == 1: return sum(sum(x) for x in P)
-        
-        def left(arr):
-            lft = [arr[0]] + [0] * (n - 1)
-            for i in range(1, n): lft[i] = max(lft[i - 1] - 1, arr[i])
-            return lft
-        
-        def right(arr):
-            rgt = [0] * (n - 1) + [arr[-1]]
-            for i in range(n - 2, -1, -1): rgt[i] = max(rgt[i + 1] - 1, arr[i])
-            return rgt
-        
-        pre = P[0]
-        for i in range(m - 1):
-            lft, rgt, cur = left(pre), right(pre), [0] * n
-            
-            for j in range(n):
-                cur[j] = P[i + 1][j] + max(lft[j], rgt[j])
-            pre = cur[:]
-        
+    def maxPoints(self,points):
+        m, n = len(points), len(points[0])
 
-        return max(pre)
-#first solution
-    
+        # Initialize dp with the first row
+        dp = points[0]
+
+        # Process each row starting from the second row
+        for i in range(1, m):
+            # Left to right pass
+            left_dp = [0] * n
+            left_dp[0] = dp[0]  # No cost for the first column
+            for j in range(1, n):
+                left_dp[j] = max(left_dp[j - 1] - 1, dp[j])
+
+            # Right to left pass
+            right_dp = [0] * n
+            right_dp[-1] = dp[-1]  # No cost for the last column
+            for j in range(n - 2, -1, -1):
+                right_dp[j] = max(right_dp[j + 1] - 1, dp[j])
+
+            # Update dp for the current row
+            for j in range(n):
+                dp[j] = points[i][j] + max(left_dp[j], right_dp[j])
+
+        # The answer is the maximum value in dp after processing all rows
+        return max(dp)
+
+        
