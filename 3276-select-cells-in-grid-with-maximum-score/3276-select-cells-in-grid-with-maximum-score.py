@@ -42,39 +42,17 @@ class Solution:
             ans = max(take, not_take)
         memo[(i, mask_row)] = ans
         return ans
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+    
+    
+    '''
+      Time complexity = O((n * m) log(m * n)) + (n * m )*2^n
+      
+      i can take values from 0 to n * m
+      mask_row represents a bitmask indicating which rows have been used. Since there are n rows,      mask_row can take up to 2^n different values.
+      
+      Space complexity the same
+
+    
+    
+    '''
