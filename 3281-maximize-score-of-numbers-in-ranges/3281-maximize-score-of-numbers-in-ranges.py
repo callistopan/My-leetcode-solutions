@@ -1,5 +1,9 @@
 from typing import List
 from math import inf
+'''
+time complexity
+O(nlogn+nlog(max_value))
+'''
 
 class Solution:
     def maxPossibleScore(self, start: List[int], d: int) -> int:
