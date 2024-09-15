@@ -40,4 +40,4 @@ class Solution:
                 node = node.children[idx]
                 ans = min(ans, dfs(j + 1) + 1)
             return ans
-        return dfs(0) if dfs(0) < inf else -1
+        return dfs(0) if dfs(0) != inf else -1
