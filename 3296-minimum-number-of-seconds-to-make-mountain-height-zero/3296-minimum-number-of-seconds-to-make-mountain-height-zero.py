@@ -4,7 +4,7 @@ class Solution:
             total = 0
             for wt in workerTimes:
                 left_x = 0
-                right_x = 2 * (10 ** 12)
+                right_x = mountainHeight
                 while left_x < right_x:
                     mid = (left_x + right_x + 1) // 2
                     cost = wt * mid * (mid + 1) // 2
