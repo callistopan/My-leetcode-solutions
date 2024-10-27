@@ -34,3 +34,9 @@ class Solution:
             answer.append(dfs(i))
             
         return answer
+    
+    '''
+    Time Complexity: O(n2)O(n2)
+    Space Complexity: O(n)O(n)
+    
+    '''
