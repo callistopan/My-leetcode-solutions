@@ -12,6 +12,7 @@ class Solution:
                     
                     memo[row][col] = 1 + min(memo[row][col - 1], memo[row - 1][col], memo[row - 1][col - 1])
                     count += memo[row][col]
+        #print(memo)
         
         
         return count
