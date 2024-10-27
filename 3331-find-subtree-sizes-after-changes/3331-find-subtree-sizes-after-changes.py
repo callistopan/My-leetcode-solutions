@@ -36,7 +36,7 @@ class Solution:
         return answer
     
     '''
-    Time Complexity: O(n2)O(n2)
-    Space Complexity: O(n)O(n)
+    Time Complexity: O(n^2)
+    Space Complexity: O(n)
     
     '''
