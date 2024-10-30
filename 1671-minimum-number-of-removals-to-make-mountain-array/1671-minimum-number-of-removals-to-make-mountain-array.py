@@ -1,27 +1,42 @@
+from typing import List
+from math import inf
+
 class Solution:
     def minimumMountainRemovals(self, nums: List[int]) -> int:
-        N = len(nums)
+        n = len(nums)
+        lis_length = self.getLongestIncreasingSubsequenceLength(nums)
+        lds_length = self.getLongestIncreasingSubsequenceLength(nums[::-1])[::-1]
+        
+        min_removals = inf
+        for i in range(1, n - 1):
+            if lis_length[i] > 1 and lds_length[i] > 1:  # proper mountain
+                min_removals = min(min_removals, n - (lis_length[i] + lds_length[i] - 1))
+        
+        return min_removals if min_removals != inf else 0
 
-        lis_length = [1] * N
-        lds_length = [1] * N
+    def getLongestIncreasingSubsequenceLength(self, nums: List[int]) -> List[int]:
+        n = len(nums)
+        lis = [1] * n
+        sub = []
+        
+        for i in range(n):
+            index = self.findPosition(sub, nums[i])
+            if index == len(sub):
+                sub.append(nums[i])
+            else:
+                sub[index] = nums[i]
+            lis[i] = len(sub)
+        
+        return lis
 
-        # Stores the length of longest increasing subsequence that ends at i.
-        for i in range(N):
-            for j in range(i):
-                if nums[i] > nums[j]:
-                    lis_length[i] = max(lis_length[i], lis_length[j] + 1)
-
-        # Stores the length of longest decreasing subsequence that starts at i.
-        for i in range(N - 1, -1, -1):
-            for j in range(i + 1, N):
-                if nums[i] > nums[j]:
-                    lds_length[i] = max(lds_length[i], lds_length[j] + 1)
-
-        min_removals = float("inf")
-        for i in range(N):
-            if lis_length[i] > 1 and lds_length[i] > 1:
-                min_removals = min(
-                    min_removals, N - lis_length[i] - lds_length[i] + 1
-                )
-
-        return min_removals
+    def findPosition(self, nums: List[int], e: int) -> int:
+        l, r = 0, len(nums)
+        
+        while l < r:
+            m = l + (r - l) // 2
+            if nums[m] < e:
+                l = m + 1
+            else:
+                r = m
+        
+        return l
