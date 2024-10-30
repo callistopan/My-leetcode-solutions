@@ -30,13 +30,13 @@ class Solution:
         return lis
 
     def findPosition(self, nums: List[int], e: int) -> int:
-        l, r = 0, len(nums)
+        l, r = 0, len(nums) - 1
         
-        while l < r:
+        while l <= r:
             m = l + (r - l) // 2
             if nums[m] < e:
                 l = m + 1
             else:
-                r = m
+                r = m - 1
         
         return l
